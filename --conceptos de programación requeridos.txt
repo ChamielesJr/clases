@@ -1,0 +1,59 @@
+--conceptos de programación requeridos en el backend
+
+--definición 
+blosques de código reutilizables que realizan tareas especifica 
+
+--ejemplo 
+funtion sumar (a,b){'{'}return a + b;{'}'}
+
+--control de flujo en programación 
+
+--condicionales
+if, else, controlan las deciones según las condiciones
+
+--bucles 
+for while ejecutan código repetitivamente
+
+--manejos de errores en backend
+try catch 
+captura errores para evitar fallos inesperados 
+
+importancia mantiene el servidor estable y seguro 
+
+--peticiones http básicas 
+
+---métodos principales
+get---select en base de datos 
+post---insert en base de datos
+put---update en base de datos
+delete---delete en base de datos
+
+---función 
+comunican datos entre clientes y servidor para interactuar con la web 
+
+procesos síncronos 
+ejecución bloqueante 
+1. cada instrucción espera al anterior para continuar 
+impacto
+2. puede atrasar los procesos si una tarea es lena
+
+proceso asíncrono
+ejecución no bloqueable 
+permite manejar varias tareas simultáneamente 
+ventajas mejora la eficiencia y velocidad de las aplicaciones 
+
+introducción a promesas 
+manejo asincrónico 
+permite trabajar con operaciones que tardan en completarse 
+
+estados 
+pendiente 
+cumplida
+rechazadas
+
+uso de aync/await
+sintaxis moderna 
+facilita la escritura de código asincrónico claro y ordenado 
+beneficios 
+mejora la manejabilidad 
+

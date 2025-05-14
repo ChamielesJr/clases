@@ -1,0 +1,32 @@
+practica levantamiento de servicio en xpress.js 
+
+verificar si tenemos instalado node.js 
+node --versión 
+
+npm init -y
+
+npm install express
+
+dentro del vscode
+--levantamos en el servidor  
+server.js
+//importar express
+const express = require('express');
+
+const app = express ();
+
+app.get('/saludo', (req, res){
+res.send('hola mundo somos la calse de aw 2 paralelo a 2021-1'
+})
+
+//levatamos el servicio en un puerto en especifico 
+app.listen(3000, ()={
+ console.log('el servidor esta escuchando en http://localhost:3000'); 
+})
+
+
+en el terminal 
+node server.js
+
+
+para el dia de mañana hacer lo mismo pero en ves del saludo debe de tener una insersacion de función ques salude a quien se le introduzca el nombre de manera sincronico y asincrónico 
