@@ -1,0 +1,23 @@
+API de SOAP
+
+Web Services Description Language (WSDL) describe el alcance y la función de los servicios web SOAP
+
+paso #1 instalar paquetes para SOAP
+composer require artisaninweb/laravel-soap
+
+nota: en caso de que aparezca el siguiente mensaje 
+Cannot use artisaninweb/laravel-soap's latest version 0.3.0.10 as it requires ext-soap * which is missing from your platform.
+significa que la extensión soap no esta habilitada por lo que deberemos habilitarla 
+Abre el archivo php.ini con el bloc de notas y buscamos ;extension=soap y procedemos a eliminar el ; guardamos y reiniciamos el servicio apache, si no sabes cual archivo php.ini abrir ejecuta el siguiente comando en el cmd dentro de la carprta XAMPP 
+(notepad "C:\xampp\php\php.ini")
+
+
+
+paso #2 crear el controlador para el servicio de SOAP 
+php artisan make:controller SoapController
+php artisan make:controller ServicioSoap
+
+
+paso #3 crear el archivo servicio.wsdl
+
+paso #4 creamos la ruta 

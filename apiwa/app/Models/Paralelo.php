@@ -2,16 +2,19 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Paralelo extends Model
 {
-    //activar la funcion para poder agregar registros desde este modelo
+    use HasFactory;
+
+    // Campo que se puede asignar de forma masiva
     protected $fillable = ['nombre'];
 
-    //activcar la funcion que me permita relacionar con las otras tablas
-
-    public function estudiantes(){
-        return $this -> HasMany(estudiante::class);
+    // Relación: un paralelo tiene muchos estudiantes
+    public function estudiantes()
+    {
+        return $this->hasMany(Estudiante::class);
     }
 }

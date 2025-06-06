@@ -3,11 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use App\Models\Paralelo;
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\estudiante>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Estudiante>
  */
-class estudianteFactory extends Factory
+class EstudianteFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,10 @@ class estudianteFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nombre' => $this->faker->name(),
+            'cedula' => $this->faker->unique()->numerify('##########'),
+            'correo' => $this->faker->unique()->safeEmail(),
+            'paralelo_id' => Paralelo::factory(),
         ];
     }
 }

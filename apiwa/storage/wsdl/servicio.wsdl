@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="ServicioSOAP"
+             targetNamespace="http://localhost:8000"
+             xmlns:tns="http://localhost:8000"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+             xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+  <!-- Definición de los tipos de mensajes -->
+  <message name="obtenerEstudiantesRequest"/>
+  <message name="obtenerEstudiantesResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+
+  <message name="crearEstudianteRequest">
+    <part name="nombre" type="xsd:string"/>
+    <part name="cedula" type="xsd:string"/>
+    <part name="correo" type="xsd:string"/>
+    <part name="paralelo_id" type="xsd:int"/>
+  </message>
+  <message name="crearEstudianteResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+
+  <message name="obtenerParalelosRequest"/>
+  <message name="obtenerParalelosResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+
+  <message name="crearParaleloRequest">
+    <part name="nombre" type="xsd:string"/>
+  </message>
+  <message name="crearParaleloResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+
+  <!-- Definición de las operaciones disponibles -->
+  <portType name="ServicioSOAPPortType">
+    <operation name="obtenerEstudiantes">
+      <input message="tns:obtenerEstudiantesRequest"/>
+      <output message="tns:obtenerEstudiantesResponse"/>
+    </operation>
+    <operation name="crearEstudiante">
+      <input message="tns:crearEstudianteRequest"/>
+      <output message="tns:crearEstudianteResponse"/>
+    </operation>
+    <operation name="obtenerParalelos">
+      <input message="tns:obtenerParalelosRequest"/>
+      <output message="tns:obtenerParalelosResponse"/>
+    </operation>
+    <operation name="crearParalelo">
+      <input message="tns:crearParaleloRequest"/>
+      <output message="tns:crearParaleloResponse"/>
+    </operation>
+  </portType>
+
+  <!-- Configuración del protocolo SOAP y bindings -->
+  <binding name="ServicioSOAPBinding" type="tns:ServicioSOAPPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    
+    <operation name="obtenerEstudiantes">
+      <soap:operation soapAction="obtenerEstudiantes"/>
+      <input><soap:body use="encoded" namespace="http://localhost:8000" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+      <output><soap:body use="encoded" namespace="http://localhost:8000" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    </operation>
+
+    <operation name="crearEstudiante">
+      <soap:operation soapAction="crearEstudiante"/>
+      <input><soap:body use="encoded" namespace="http://localhost:8000" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+      <output><soap:body use="encoded" namespace="http://localhost:8000" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    </operation>
+
+    <operation name="obtenerParalelos">
+      <soap:operation soapAction="obtenerParalelos"/>
+      <input><soap:body use="encoded" namespace="http://localhost:8000" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+      <output><soap:body use="encoded" namespace="http://localhost:8000" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    </operation>
+
+    <operation name="crearParalelo">
+      <soap:operation soapAction="crearParalelo"/>
+      <input><soap:body use="encoded" namespace="http://localhost:8000" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+      <output><soap:body use="encoded" namespace="http://localhost:8000" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+    </operation>
+  </binding>
+
+  <!-- Servicio y endpoint del servidor -->
+  <service name="ServicioSOAP">
+    <port name="ServicioSOAPPort" binding="tns:ServicioSOAPBinding">
+      <soap:address location="http://127.0.0.1:8000/api/soap"/>
+    </port>
+  </service>
+</definitions>

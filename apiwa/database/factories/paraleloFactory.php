@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\paralelo>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Paralelo>
  */
-class paraleloFactory extends Factory
+class ParaleloFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class paraleloFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nombre'=> 'Paralelo'.$this->faker->unique()->numberBetween(1,99)
         ];
     }
 }

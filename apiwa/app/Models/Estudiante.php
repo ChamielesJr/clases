@@ -2,16 +2,19 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Estudiante extends Model
 {
-    //activar la funcion para poder agregar registros desde este modelo
-    protected $fillable = ['nombre','cedula','correo','paralelo_id'];
+    use HasFactory;
 
-    //activcar la funcion que me permita relacionar con las otras tablas
+    // Campos que pueden ser asignados de forma masiva (create, update, etc.)
+    protected $fillable = ['nombre', 'cedula', 'correo', 'paralelo_id'];
 
-    public function paralelo(){
-        return $this -> belongsTo(paralelo::class);
+    // Relación inversa: un estudiante pertenece a un paralelo
+    public function paralelo()
+    {
+        return $this->belongsTo(Paralelo::class);
     }
 }
