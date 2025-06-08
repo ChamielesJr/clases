@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 para crear la aplicación api
 php artisan install:api
 
@@ -11,3 +12,18 @@ php --ini
 para crear los controladores
 php artisan make:controller nombrecontroller
 
+=======
+para crear la aplicación api
+php artisan install:api
+
+para crear los modelos y sus migraciones 
+
+php artisan make:model nombredelmodelo -m
+
+para configuración la conexión entre pgadmin y laravel 
+php --ini
+
+para crear los controladores
+php artisan make:controller nombrecontroller
+
+>>>>>>> Stashed changes

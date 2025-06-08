@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 -fundamentos de testing en la lógica del backend
 
 exploraremos como el testing mejora el desarrollo del back end 
@@ -26,4 +27,34 @@ reduce errores en apis hasta un 40%
 test automatizados, verifica el comportamiento esperando sin intervención manual 
 assertions, comprueba condiciones 
 
+=======
+-fundamentos de testing en la lógica del backend
+
+exploraremos como el testing mejora el desarrollo del back end 
+ -por que es crucial el testing en el backend
+detecta errores temprano, reduce el costo y riesgos en producción 
+mejora la calidad, código mas limpio y mantenible
+confianza al desplegar, implementaciones mas seguras y agiles
+refactorización segura, cambios sin introducir nuevos bugs
+
+nota: el 70% de errores se detectan en etapas tempranas, evitando problemas futuros.
+
+-laravel log: monitoreo y debugging
+registro de eventos, datos útiles para identificar fallos y causas
+niveles de log, desde debug hasta emergencia para calificar errores
+ejemplo practico, log::error('error al procesar el pago:')
+mejora respuesta, reduce tiempos de un 30%
+
+-postman testing apis
+pruebas http
+coleccions 
+variables de entorno
+automatización 
+reduce errores en apis hasta un 40%
+
+-php unit:testing unitario
+test automatizados, verifica el comportamiento esperando sin intervención manual 
+assertions, comprueba condiciones 
+
+>>>>>>> Stashed changes
 aprender a crear factory 
